@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>@me</title>
+	<link rel="stylesheet" type="text/css" href="./@me.css">
+</head>
+<body>
+	<textarea id="note" placeholder=""></textarea>
+	<ul>
+		<li>@me1</li>
+		<li>@me2</li>
+		<li>@me3</li>
+		<li>@me4</li>
+		<li>@me5</li>
+	</ul>
+	<script src="jquery.min.js"></script>
+	<script src="jqueryflextext.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#note').flexText();
+			$('ul').on('click','li',function(e){
+				var e = e.srcElement || e.target;
+				var myValue = $(e).html()
+				$('#note').insertAtCursor(myValue);
+
+			})
+		})
+
+	</script>
+</body>
+</html>

@@ -497,13 +497,48 @@ textarea:focus {
         background-size: 51px auto;
     }
 }
-ul{
-    list-style: none;
-    display: -webkit-flex;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
-}
-ul li{
-    width: 200px;
 
+.tab{
+    width: 300px;
+    height: 350px;
+    margin: 20px auto;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgba(150,150,150,0.3);
+    overflow: hidden;
 }
+.tab .dataTab{
+    width:240px;
+    height: 350px;
+    background-color: #fff;
+    font-size: 16px;
+    overflow-y: auto;
+    float:left;
+}
+.tab .tabNav{
+    width: 58px;
+    height: 350px;
+    float: right;
+    border-left: 1px solid rgba(150,150,150,0.3);
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+.tab .tabNav div{
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+    line-height: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(150,150,150,0.3);
+    cursor: pointer;
+}
+.dataTab .MemberList div{
+    padding: 5px 15px;
+    border-bottom: 1px solid rgba(150,150,150,.2);
+}
+.dataTab .GroupList div{
+    padding: 5px 15px;
+    border-bottom: 1px solid rgba(150,150,150,.2)
+}
+.

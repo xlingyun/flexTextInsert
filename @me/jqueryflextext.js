@@ -60,7 +60,6 @@
             }
         });
     };
-
    
     $.fn.insertAtCursor = function(myValue) {
         var $t = $(this)[0];

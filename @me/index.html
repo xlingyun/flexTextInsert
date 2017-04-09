@@ -6,25 +6,32 @@
 	<link rel="stylesheet" type="text/css" href="./@me.css">
 </head>
 <body>
-	<textarea id="note" placeholder=""></textarea>
-	<ul>
-		<li>@me1</li>
-		<li>@me2</li>
-		<li>@me3</li>
-		<li>@me4</li>
-		<li>@me5</li>
-	</ul>
+	<div id="textareaList">
+		<textarea id="conclusion" placeholder="请填写今日工作总结"></textarea>
+		<textarea id="plan" placeholder="请填写明日工作计划"></textarea>
+		<textarea id="experience" placeholder="请填写工作心得体会"></textarea>
+	</div>
 	<script src="jquery.min.js"></script>
 	<script src="jqueryflextext.js"></script>
+	<script src="loopshowdata.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('#note').flexText();
-			$('ul').on('click','li',function(e){
-				var e = e.srcElement || e.target;
-				var myValue = $(e).html()
-				$('#note').insertAtCursor(myValue);
+			$('#conclusion,#plan,#experience').flexText();
+			$('#textareaList').on('focus','textarea',function(){
+				var that = this;
+				$('.MemberList').off('click','div').on('click','div', function(){
+					var myValue = $(this).html();
+					$(that).insertAtCursor('@'+myValue);
+				})
 
+				$('.GroupList').off('click','div').on('click','div', function(){
+					var myValue = $(this).html();
+					$(that).insertAtCursor('@'+myValue);
+				})
 			})
+
+			$('#experience').trigger('focus')
+
 		})
 
 	</script>
